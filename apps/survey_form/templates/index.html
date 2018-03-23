@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 600px;
+        height: 600px;
+        border-style: double;
+        border-width: 5px;
+        margin: auto;
+    }
+        .boo{
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+            .cmnt{
+                width: 250px;
+                height: 50px;
+            }
+            .blue{
+                padding: 5px;
+                border: 0px;
+                background-color: rgb(71, 71, 255);
+                color: white;
+            }
+</style>
+<body>
+    <div class="box">
+        <form action="/process" class="boo" method="POST">
+            {% csrf_token %}
+            Your Name:
+            <input type="text" name='YN'>
+            <br>
+            <br>
+            Dojo Location:
+            <select name='LCTN'>
+                <option value="sanjose">San Jose</option>
+                <option value="sanfran">San Francisco</option>
+                <option value="space">Space</option>
+            </select>
+            <br>
+            <br>
+            Favorite Language:
+            <select name='LNG'>
+                <option value="python">Python</option>
+                <option value="ruby">Ruby</option>
+                <option value="ios">IOS</option>
+            </select>
+            <br>
+            <br>
+            Comment (optional):
+            <input type="text" class="cmnt" name='CMNT'>
+            <input type="submit" value="Submit" class=blue>
+            <br>
+            <br>
+        </form>
+    </div>
+</body>

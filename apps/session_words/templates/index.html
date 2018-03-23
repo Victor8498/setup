@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper{
+        width: 1200px;
+        height: 600px;
+        border-style: double;
+        border-width: 5px;
+        margin: auto;
+        display: inline-block;
+    }
+        .left{
+            width: 550px;
+            height: 600px;
+            border-style: dotted;
+            border-width: 0.5px;
+            border-color: red;
+            margin: auto;
+            display: inline-block;
+            text-align: center
+        }
+        .right{
+            width: 600px;
+            height: 600px;
+            border-style: dotted;
+            border-width: 0.5px;
+            border-color: red;
+            margin: auto;
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+        }
+            .red{
+                color: red,
+            }
+            .green{
+                color: green,
+            }
+            .blue{
+                color: blue,
+            }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <form action="/process" class="form" method="POST">
+                {% csrf_token %}
+                <h1>Add A New Word</h1>
+                <input type="text" name="wordy">
+                <h4>choose a color:</h4>
+                <input type="radio" name="color" value="red">red
+                <br>
+                <br>
+                <input type="radio" name="color" value="green">green
+                <br>
+                <br>
+                <input type="radio" name="color" value="blue">blue
+                <br>
+                <br>
+                <input type="checkbox" name="big">show in BIG fonts!
+                <br>
+                <br>
+                <input type="submit" value="Add to Session">
+            </form>
+        </div>
+        <div class="right">
+            <form action="/clear"></form>
+                <p class={{request.session.color}}>{{ request.session.word }}</p>
+                <input type="submit" value="Clear Session">
+            <form>
+        </div>
+    </div>
+</body>

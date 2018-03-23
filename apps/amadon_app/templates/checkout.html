@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper{
+        width: 1200px;
+        height: 600px;
+        border-style: double;
+        border-width: 5px;
+        margin: auto;
+        display: inline-block;
+        margin: auto;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <h1>Thank You for your business!</h1>
+        <br>
+        <h4>We charged your credit card for {{request.session.TTL}}</h4>
+        <br>
+        <br>
+        <h4>You have ordered {{request.session.NMBR}} items so far and spent {{request.session.TTL}} with Amadon.com</h4>
+        <br>
+        <br>
+        <br>
+        <a href="/">Go Back</a>
+    </div>

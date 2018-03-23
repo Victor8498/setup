@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        .box{
+            width: 550px;
+            height: 550px;
+            border-style: double;
+            border-width: 5px;
+            margin: auto;
+            text-align: center;
+        }
+            .word{
+                width: 500px;
+                height: 100px;
+                text-align: center;
+                font-size: 100px;
+                font-weight: 100px;
+                border-style: solid;
+                border-width: 5px;
+                margin-left: 20px;
+                margin-top: 10px;
+            }
+            .button{
+                width: 100px;
+                height: 35px;
+                border: none;
+                padding: 5px;
+                color: white;
+                background-color: rgb(0, 180, 0);
+            }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form action="/random">
+            <h2>Random Word (Attempt #{{request.session.number}}):</h2>
+            <br>
+            <br>
+            <br>
+            <div class="word">{{random_word}}</div>
+            <br>
+            <input type="submit" value="Generate" class="button">
+        </form>
+    </div>
+</body>
+</html>

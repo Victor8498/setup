@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper{
+        width: 1200px;
+        height: 600px;
+        border-style: double;
+        border-width: 5px;
+        margin: auto;
+        display: inline-block;
+        margin: auto;
+    }
+    .table{
+        width: 1200px;
+        height: 100px;
+    }
+        tr:nth-child(even) {
+        background-color: #c9c9c9;
+        }
+
+</style>
+<body>
+    <div class="wrapper">
+        <table class="table" action="/process">
+            <tr>
+                <th>Product Id</th>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+        <form action="/process" method='POST'>
+            {% csrf_token %}
+
+                <td>01</td>
+                <td>Dojo Tshirt</td>
+                <td value="item1">$19.99</td>
+                <td>
+                    <select name='number1'>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>                       
+                    </select>
+                    <input type='hidden' name='product_id' value='01'/>
+                    <input type="submit" value="Buy!"/>
+                </td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>Dojo Sweater</td>
+                <td name="item2">$29.99</td>
+                <td>
+                    <select name='number2'>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>                       
+                    </select>
+                    <input type='hidden' name='product_id' value='02'/>
+                    <input type="submit" value="Buy!" />
+                </td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>Dojo Cup</td>
+                <td name="item3">$4.99</td>
+                <td>
+                    <select name='number3'>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>                       
+                    </select>
+                    <input type='hidden' name='product_id' value='03'/>
+                    <input type="submit" value="Buy!"/>
+                </td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>Algorithm Book</td>
+                <td name="item4">$49.99</td>
+                <td>
+                    <select name='number4'>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>                       
+                    </select>
+                    <input type='hidden' name='product_id' value='04'/>
+                    <input type="submit" value="Buy!"/>
+                </td>
+            </tr>
+        </form>
+        </table>
+    </div>
+</body>
